@@ -1,0 +1,71 @@
+add coupon API
+	POST    http://host:port/add_coupon/    
+
+	argument:
+			{
+				"with":2,
+				"get":2,
+				"desc":"cool offer"	
+			}	
+			
+add product API
+
+	POST	http://host:port/add_product/
+	
+	argument:
+		add product without any discount code
+					{
+						"name":"product_1",
+						"price":1299,
+						"desc":"first product added"
+			
+					}
+					
+		add product with any discount code
+		
+					{
+						"name":"product_2",
+						"price":1199,
+						"desc":"second product added",
+						"coupon":1	
+					}
+					
+
+
+add product to cart
+
+	POST	http://host:port/add_product_in_cart/
+	argument:
+		add product in new cart
+				{
+	"coupon":1,
+
+					"product":1,
+				
+	"quantity":5,
+					"cart":4
+				
+}
+
+
+		add product in existing cart
+				{
+	"coupon":1,
+
+					"product":1,
+				
+	"quantity":5,
+				
+}
+
+order products API
+
+	POST	http://host:port/order/
+	
+	argument:
+			*pass the cart id  and you will get the total of all products in a cart, product total after discount and total
+				discount on the products.
+			
+				{
+					'id':1
+				}
